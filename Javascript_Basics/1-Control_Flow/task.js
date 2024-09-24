@@ -70,17 +70,15 @@ console.log(checkForC('gillian')); // Output "This name does not include a c"
 // "this country does not start with a letter S"
 
 function startsWithS(country) {
-  if (country.startsWith("S")) {
+  if (country.startsWith('S')) {
     console.log('This country starts with S');
   } else {
     console.log('This country does not start with S');
   }
 }
 
-console.log(startsWithS("Scotland"));// Output "This country does start with S"
-console.log(startsWithS("England"));// Output "This country does not start with S"
-
-
+console.log(startsWithS('Scotland')); // Output "This country does start with S"
+console.log(startsWithS('England')); // Output "This country does not start with S"
 
 // Task 2 Ternary Operator: Create a function named getDiscount that takes a customerType parameter and returns:
 
@@ -88,11 +86,45 @@ console.log(startsWithS("England"));// Output "This country does not start with 
 // 5 if customerType is something else.
 
 function getDiscount(customerType) {
-  // Write your code here
+  return customerType == 'member' ? 20 : 15;
 }
 
 console.log(getDiscount('member')); // Output: 20
 console.log(getDiscount('guest')); // Output: 5
+
+//  2.2 check to see if day is a weekday
+function checkWeekDay(day) {
+  const weekdays2 = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+
+  return weekdays2.includes(day)
+    ? 'This is a weekday'
+    : 'This is not a weekday';
+}
+
+console.log(checkWeekDay('monday')); // Output 'This is a weekday'
+console.log(checkWeekDay('sunday')); // Output 'This is not a weekday'
+
+// 2.3 check to see if account no is 5 digits long
+function checkValidAccountNo(accountNo) {
+  return accountNo.length === 5
+    ? 'Account number valid'
+    : 'Account number not valid';
+}
+console.log(checkValidAccountNo('12345')); // output "Account number valid"
+console.log(checkValidAccountNo('123456')); // output "Account number not valid"
+
+// 2.4 check to see what the weather is and return a statement advising what clothes to wear.
+// "Its a beautiful day, wear shorts" if the weather is sunny
+// "Its not so nice today, wear a raincoat" if the weather is rainy.
+
+function whatToWear(weather) {
+  return weather === 'sunny'
+    ? 'Its a beautiful day, wear shorts'
+    : 'Its not so nice today, wear a raincoat';
+}
+
+console.log(whatToWear('sunny')); // Output "Its a beautiful day, wear shorts"
+console.log(whatToWear('rainy')); // Output "Its not so nice today, wear a raincoat"
 
 // Task 3 Short-Circuit Evaluation: Create a function named displayMessage that takes a boolean parameter isLoggedIn and prints:
 
