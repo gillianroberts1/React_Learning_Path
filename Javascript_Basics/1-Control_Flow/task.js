@@ -132,18 +132,54 @@ console.log(whatToWear('rainy')); // Output "Its not so nice today, wear a rainc
 // If isLoggedIn is false, it does nothing.
 
 function displayMessage(isLoggedIn) {
-  // Write your code here
+  if(isLoggedIn) {
+    return "Welcome back!" 
+  }
 }
 
 console.log(displayMessage(true)); // Output: "Welcome back!"
 console.log(displayMessage(false)); // Output: nothing
 
+// Task 3.2 create function named checkDogName that returns "woof" if the name is carmen
+
+function checkDogName(name) {
+  if(name === "carmen") {
+    return "woof"
+  }
+}
+
+console.log(checkDogName("carmen")); // Output "woof"
+console.log(checkDogName("dot")); // Output : nothing
+
+
+
+
 // Task 4 Switch Statement: Create a function named getDay that takes a number parameter day and returns the day of the week in words. For example, if day is 1, the function should return "Monday".
 
 function getDay(day) {
-  // Write your code here
+
+  switch(day){
+    case 1:
+      return 'Monday';
+    case 2:
+      return 'Tuesday'
+    case 3:
+      return 'Wednesday'; 
+    case 4:
+      return 'Thursday';
+    case 5:
+      return 'Friday';
+    case 6:
+      return 'Saturday';
+    case 7:
+      return 'Sunday';
+      default:
+        return 'Not a valid day'
+  }
 }
 
 console.log(getDay(1)); // Output: "Monday"
 console.log(getDay(4)); // Output: "Thursday"
 console.log(getDay(7)); // Output: "Sunday"
+
+//
