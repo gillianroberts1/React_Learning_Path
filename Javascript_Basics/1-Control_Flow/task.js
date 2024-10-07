@@ -132,8 +132,8 @@ console.log(whatToWear('rainy')); // Output "Its not so nice today, wear a rainc
 // If isLoggedIn is false, it does nothing.
 
 function displayMessage(isLoggedIn) {
-  if(isLoggedIn) {
-    return "Welcome back!" 
+  if (isLoggedIn) {
+    return 'Welcome back!';
   }
 }
 
@@ -143,28 +143,24 @@ console.log(displayMessage(false)); // Output: nothing
 // Task 3.2 create function named checkDogName that returns "woof" if the name is carmen
 
 function checkDogName(name) {
-  if(name === "carmen") {
-    return "woof"
+  if (name === 'carmen') {
+    return 'woof';
   }
 }
 
-console.log(checkDogName("carmen")); // Output "woof"
-console.log(checkDogName("dot")); // Output : nothing
-
-
-
+console.log(checkDogName('carmen')); // Output "woof"
+console.log(checkDogName('dot')); // Output : nothing
 
 // Task 4 Switch Statement: Create a function named getDay that takes a number parameter day and returns the day of the week in words. For example, if day is 1, the function should return "Monday".
 
 function getDay(day) {
-
-  switch(day){
+  switch (day) {
     case 1:
       return 'Monday';
     case 2:
-      return 'Tuesday'
+      return 'Tuesday';
     case 3:
-      return 'Wednesday'; 
+      return 'Wednesday';
     case 4:
       return 'Thursday';
     case 5:
@@ -173,8 +169,8 @@ function getDay(day) {
       return 'Saturday';
     case 7:
       return 'Sunday';
-      default:
-        return 'Not a valid day'
+    default:
+      return 'Not a valid day';
   }
 }
 
@@ -182,4 +178,71 @@ console.log(getDay(1)); // Output: "Monday"
 console.log(getDay(4)); // Output: "Thursday"
 console.log(getDay(7)); // Output: "Sunday"
 
-//
+// Logical Operators  &&
+
+var myAge = 16;
+if (myAge >= 18 && myAge <= 30) {
+  document.write('You can come you cool dude ');
+} else {
+  document.write('you aint coming');
+}
+
+// Logical Operators  ||
+
+var myAge = 20;
+if (myAge < 18 || myAge > 30) {
+  console.log('you aint coming ');
+} else {
+  console.log('You can come you cool dude');
+}
+
+// while loops
+
+var age = 5; //index variable
+while (age < 10) {
+  //condition
+  console.log('Your age is less than 10');
+  age++; // age incrementer to break the loop otherwise it will keep looping
+}
+
+document.write('you are now over 10');
+
+//  For loops
+for (age = 0; age < 10; age++) {
+  //condition
+  console.log('Your age is less than 10');
+}
+
+document.write('you are now over 10');
+
+var links = document.getElementsByTagName('a');
+
+// for loops
+for (i = 0; i <= links.length; i++) {
+  console.log('this is link number' + i);
+}
+document.write('all links now looped');
+
+// Break and Continue
+for (i = 0; i < 10; i++) {
+  if (i === 5 || i === 3) {
+    //dont show 3 or 5
+    continue;
+  }
+  console.log(i);
+
+  if (i === 7) {
+    // stop at 7
+    break;
+  }
+}
+
+console.log('i have broken out of the loop');
+
+
+// loops practical example - add the class name on the html
+var links = document.getElementsByTagName("a")
+
+for (i = 0; i < links.length; i++){
+  links[i].className = "link-" + i;
+}
