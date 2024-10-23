@@ -24,11 +24,10 @@ console.log(areOddNumbers);
 //    Write a function that takes an array of objects representing users and finds the first user whose age is greater than 30 using `find()`.
 
 users = [
-  { name: "Gillian", age: 25 },
-  { name: "Louise", age: 45 },
-  { name: "Carmen", age: 7 },
-  { name: "Dot", age: 40 }
-
+  { name: 'Gillian', age: 25 },
+  { name: 'Louise', age: 45 },
+  { name: 'Carmen', age: 7 },
+  { name: 'Dot', age: 40 },
 ];
 
 const user = users.find(user => user.age > 30);
@@ -36,7 +35,12 @@ console.log(user);
 
 // 5. **`sort()` Task**
 //    Write a function that takes an array of numbers and returns the array sorted in ascending order using `sort()`.
-const numbers3 = [4,6,2,44,76,12]
+const numbers3 = [4, 6, 2, 44, 76, 12];
 
-const sortedNumbers = numbers3.sort((a, b) => a - b)
+const sortedNumbers = numbers3.sort((a, b) => a - b);
 console.log(sortedNumbers);
+
+
+
+
+

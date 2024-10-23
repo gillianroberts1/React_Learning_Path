@@ -1,14 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from '../App';
 
 const PracticeHooks = () => {
   /// 1. **`useState` Task**
   // Create a component called `ToggleButton` that toggles between `"ON"` and `"OFF"` states using the `useState` hook.
 
-  const ToggleButton = () => {
+  const ToggleButton = ({ colour }) => {
     const [isOn, setIsOn] = useState(false);
 
     return (
-      <button onClick={() => setIsOn(!isOn)}>{isOn ? 'On' : 'Off'}</button>
+      <button
+        style={{ backgroundColor: colour }}
+        onClick={() => setIsOn(!isOn)}
+      >
+        {isOn ? 'On' : 'Off'}
+      </button>
     );
   };
 
@@ -42,12 +48,18 @@ const PracticeHooks = () => {
     );
   };
 
+  // 3. **`useContext` Task**
+  // Create a `ThemeContext` that provides a theme color (`"dark"` or `"light"`) to a `ThemeButton` component that displays the current theme and changes the background color accordingly.
+
+  const theme = useContext(ThemeContext);
+  const buttonColour = theme === 'dark' ? 'blue' : 'yellow';
+
   return (
     <div>
       <h1 style={{ color: 'pink', fontSize: 80, textDecoration: 'underline' }}>
         Practicing Hooks
       </h1>
-      <ToggleButton />
+      <ToggleButton colour={buttonColour} />
       <Timer />
     </div>
   );

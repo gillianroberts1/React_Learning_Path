@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../App';
 
 /* eslint-disable react/prop-types */
 const PracticeProps = () => {
@@ -41,33 +42,39 @@ const PracticeProps = () => {
 
   const handleIncrement = () => {
     setCount(count + 1);
-    console.log("incremented");
-    
+    console.log('incremented');
   };
 
   // 4. **Children Prop Task**
-// Create a `Wrapper` component that renders its children inside a `div` with a class of `"wrapper"`.
-const Wrapper = ({ children }) => {
-    return <div className='wrapper'>{children}</div>
-}
+  // Create a `Wrapper` component that renders its children inside a `div` with a class of `"wrapper"`.
+  const Wrapper = ({ children }) => {
+    return <div className="wrapper">{children}</div>;
+  };
 
-// 5. **Spread Operator Task**
-// Create a `PersonProfile` component that accepts `name` and `age` props. Use the spread operator to pass these props from a `person` object.
-const profile = { name: "Gillian", age: 46 }
+  // 5. **Spread Operator Task**
+  // Create a `PersonProfile` component that accepts `name` and `age` props. Use the spread operator to pass these props from a `person` object.
+  const profile = { name: 'Gillian', age: 46 };
 
-const PersonProfile = ({ name, age }) => {
+  const PersonProfile = ({ name, age }) => {
     return (
-        <>
-            <h1>{name}</h1>
-            <p>Age: {age}</p>
-        </>
-    )
+      <>
+        <h1>{name}</h1>
+        <p>Age: {age}</p>
+      </>
+    );
+  };
 
-}
+  const theme = useContext(ThemeContext);
 
   return (
     <div>
-      <h1 style={{ color: 'blue', fontSize: 80, textDecoration: 'underline' }}>
+      <h1
+        style={{
+          color: theme === 'dark' ? 'pink' : 'green',
+          fontSize: 80,
+          textDecoration: 'underline',
+        }}
+      >
         Practicing Props
       </h1>
       <div>
@@ -81,7 +88,7 @@ const PersonProfile = ({ name, age }) => {
         <h2>Wrapper</h2>
         <p>content of wrapper</p>
       </Wrapper>
-      <PersonProfile {...profile}/>
+      <PersonProfile {...profile} />
     </div>
   );
 };
