@@ -4,6 +4,7 @@ import React from 'react';
 import PracticeProps from './components/PracticeProps';
 import PracticeHooks from './components/PracticeHooks';
 import Counter from './components/Counter';
+import InputFocus from './components/InputFocus';
 
 export const ThemeContext = React.createContext();
 
@@ -123,6 +124,7 @@ function App() {
         <PracticeHooks />
       </ThemeContext.Provider>
       <Counter/>
+      <InputFocus />
     </>
   );
 }
