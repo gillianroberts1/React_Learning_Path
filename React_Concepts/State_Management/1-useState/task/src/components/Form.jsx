@@ -4,6 +4,15 @@ function Form() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
+  const clearInput = () => {
+    setName('');
+    setEmail('');
+  };
+
+  const isValidEmail = email => {
+    return email.includes('@');
+  };
+
   return (
     <div>
       <h1>Form</h1>
@@ -11,14 +20,18 @@ function Form() {
         type="text"
         placeholder="Name"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={e => setName(e.target.value)}
       />
       <input
         type="email"
         placeholder="Email"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={e => setEmail(e.target.value)}
+        style={{
+          borderColor: email && !isValidEmail(email) ? 'red' : '',
+        }}
       />
+      <button onClick={clearInput}>Clear</button>
       <DisplayInfo name={name} email={email} />
     </div>
   );
